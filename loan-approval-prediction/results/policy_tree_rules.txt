@@ -1,0 +1,13 @@
+|--- Credit_Score <= 650.50
+|   |--- class: 0
+|--- Credit_Score >  650.50
+|   |--- DTI_Ratio <= 0.39
+|   |   |--- Loan_to_Income <= 3.57
+|   |   |   |--- class: 1
+|   |   |--- Loan_to_Income >  3.57
+|   |   |   |--- class: 0
+|   |--- DTI_Ratio >  0.39
+|   |   |--- Applicant_Income <= 3950.00
+|   |   |   |--- class: 0
+|   |   |--- Applicant_Income >  3950.00
+|   |   |   |--- class: 0

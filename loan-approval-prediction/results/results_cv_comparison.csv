@@ -1,0 +1,6 @@
+Model,precision,recall,f1,roc_auc,average_precision,f1_std
+Random Forest,0.9064,0.9705,0.937,0.9822,0.9424,0.0201
+Gradient Boosting,0.897,0.9746,0.9337,0.9803,0.9541,0.0256
+Decision Tree,0.882,0.9621,0.9197,0.9605,0.8895,0.0302
+SVM (RBF),0.7962,0.8234,0.808,0.939,0.872,0.026
+Logistic Regression,0.733,0.8612,0.7915,0.9242,0.8377,0.0086

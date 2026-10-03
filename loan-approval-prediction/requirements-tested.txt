@@ -1,0 +1,10 @@
+# Exact versions used to produce the results in this repo (Python 3.12).
+# Use these to reproduce the reported numbers exactly:  pip install -r requirements-tested.txt
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+scipy==1.17.1
+matplotlib==3.10.8
+seaborn==0.13.2
+joblib==1.5.3
+shap==0.52.0

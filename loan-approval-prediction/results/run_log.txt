@@ -1,0 +1,50 @@
+Raw shape: (1000, 20)
+After dropping unlabeled rows: (950, 20) | approval rate = 31.4%
+Train (760, 25) | Test (190, 25) | train approval rate 31.3%, test 31.6%
+Logistic Regression  CV F1 = 0.792 ± 0.009
+Decision Tree        CV F1 = 0.920 ± 0.030
+Random Forest        CV F1 = 0.937 ± 0.020
+Gradient Boosting    CV F1 = 0.934 ± 0.026
+SVM (RBF)            CV F1 = 0.808 ± 0.026
+
+Best model by CV F1: Random Forest
+Optimal decision threshold (max OOF F1 on train) = 0.35
+
+TEST SET - all tuned models @0.5 threshold
+                  Model  accuracy  precision  recall     f1  roc_auc  pr_auc    mcc
+0    Gradient Boosting     0.958      0.882   1.000  0.938    0.986   0.964  0.910
+1        Random Forest     0.958      0.894   0.983  0.937    0.975   0.909  0.907
+2        Decision Tree     0.953      0.881   0.983  0.929    0.971   0.889  0.897
+3            SVM (RBF)     0.889      0.855   0.783  0.817    0.958   0.912  0.740
+4  Logistic Regression     0.858      0.726   0.883  0.797    0.930   0.850  0.697
+
+TEST SET - Random Forest @ tuned threshold 0.35: {'accuracy': 0.953, 'precision': 0.881, 'recall': 0.983, 'f1': 0.929, 'roc_auc': 0.975, 'pr_auc': 0.909, 'mcc': 0.897}
+              precision    recall  f1-score   support
+
+    Rejected      0.992     0.938     0.964       130
+    Approved      0.881     0.983     0.929        60
+
+    accuracy                          0.953       190
+   macro avg      0.936     0.961     0.947       190
+weighted avg      0.957     0.953     0.953       190
+
+
+Ablation (5-fold CV on train):
+                                  precision  recall     f1  roc_auc
+Raw features only                    0.913   0.970  0.941    0.984
+Raw + engineered banking ratios      0.910   0.971  0.939    0.983
+
+Policy-tree (depth 3) on TEST set: {'precision': 0.833, 'recall': 1.0, 'f1': 0.909, 'confusion_matrix': [[118, 12], [0, 60]]}
+
+Fairness audit by Gender (model does NOT use Gender):
+              n  actual_approval_rate  ...  recall  precision
+Gender                                ...                   
+Female   365.0                 0.342  ...   1.000      0.919
+Male     538.0                 0.288  ...   0.981      0.844
+Unknown   47.0                 0.383  ...   1.000      0.900
+
+[3 rows x 5 columns]
+
+Saved model, tables and figures.
+Demo applicant -> {'approval_probability': 0.994, 'decision': 'APPROVE'}
+Weak applicant -> {'approval_probability': 0.0, 'decision': 'REJECT'}
