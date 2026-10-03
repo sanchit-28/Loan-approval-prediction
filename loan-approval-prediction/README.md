@@ -1,6 +1,5 @@
 # Loan Approval Prediction System
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue) ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange) ![License](https://img.shields.io/badge/License-MIT-green)
 
 An end-to-end machine-learning pipeline that predicts whether a loan application should be **approved or rejected**. It covers data cleaning, exploratory analysis, banking-ratio feature engineering, comparison of five tuned models, decision-threshold optimisation, evaluation (precision, recall, F1, confusion matrix, ROC/PR), explainability and a fairness audit.
 
