@@ -118,7 +118,7 @@ loan-approval-prediction/
 Requires Python 3.9+ (no GPU). Training takes a few minutes on a normal laptop.
 
 ```bash
-git clone https://github.com/<your-username>/loan-approval-prediction.git
+git clone https://github.com/<sanchit-28>/loan-approval-prediction.git
 cd loan-approval-prediction
 pip install -r requirements.txt
 python src/loan_approval.py
@@ -155,7 +155,7 @@ Python · pandas · NumPy · scikit-learn · SciPy · Matplotlib · Seaborn · S
 
 ## Author
 
-**Sanchit Krushna Thakare** — B.Tech, Electronics & Communication Engineering, VNIT Nagpur
+**Sanchit Thakare**
 
 ## License
 
